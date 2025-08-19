@@ -1,28 +1,17 @@
-use std::{cmp::Ordering, io};
-
+use my_library::get_i32;
 use rand::Rng;
+use std::{cmp::Ordering, ops::RangeInclusive};
+
+const RANGE: RangeInclusive<i32> = 1..=100;
 
 fn main() {
     println!("Guess the number!");
-
-    let secret_number = rand::rng().random_range(1..=100);
-
+    let secret_number = rand::rng().random_range(RANGE.clone());
     loop {
-        println!("Please input your guess.");
-
-        let mut guess = String::new();
-
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read line");
-
-        let guess: u32 = match guess.trim().parse() {
-            Ok(num) => num,
-            Err(_) => continue,
-        };
+        let guess = get_i32("Please input your guess.");
 
         match guess {
-            1..=100 => {},
+            x if RANGE.contains(&x) => {}
             _ => {
                 println!("Please input a number between 1 and 100");
                 continue;

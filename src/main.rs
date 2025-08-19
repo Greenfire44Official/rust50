@@ -1,4 +1,4 @@
-use my_library::get_i32;
+use my_library::get_input;
 use rand::Rng;
 use std::{cmp::Ordering, ops::RangeInclusive};
 
@@ -8,14 +8,14 @@ fn main() {
     println!("Guess the number!");
     let secret_number = rand::rng().random_range(RANGE.clone());
     loop {
-        let guess = get_i32("Please input your guess.");
+        let guess = get_input("Please input your guess.");
 
         match guess {
-            x if RANGE.contains(&x) => {}
-            _ => {
+            x if !RANGE.contains(&x) => {
                 println!("Please input a number between 1 and 100");
                 continue;
             }
+            _ => {}
         }
 
         println!("You guessed: {guess}");

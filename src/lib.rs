@@ -15,11 +15,8 @@ pub fn get_string(message: &str) -> String {
 pub fn get_char(message: &str) -> char {
     loop {
         let input = get_string(message);
-        if input.len() / size_of::<char>() == 1 {
-            return match input.chars().next() {
-                Some(c) => c,
-                None => continue,
-            };
+        if input.chars().count() == 1 {
+            return input.chars().next().unwrap();
         }
     }
 }
@@ -43,13 +40,3 @@ pub fn get_i32(message: &str) -> i32 {
 pub fn get_u32(message: &str) -> u32 {
     get_i32(message).abs() as u32
 }
-
-#[cfg(test)]
-    mod tests {
-        use super::*; // Bring items from the parent module into scope
-
-        #[test]
-        fn it_adds_two() {
-            assert_eq!(add_two(2), 4);
-        }
-    }

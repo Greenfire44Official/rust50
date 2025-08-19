@@ -1,8 +1,9 @@
-use std::str::FromStr;
+use std::{io::{self, Write}, str::FromStr};
 
 /// Gets a string
 pub fn get_string(message: &str) -> String {
-    println!("{message}");
+    print!("{message}");
+    io::stdout().flush().expect("I/O error");
 
     let mut input = String::new();
 

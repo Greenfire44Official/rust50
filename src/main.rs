@@ -8,7 +8,7 @@ fn main() {
     println!("Guess the number!");
     let secret_number = rand::rng().random_range(RANGE.clone());
     loop {
-        let guess = get_input("Please input your guess.");
+        let guess = get_input("Please input your guess: ");
 
         match guess {
             x if !RANGE.contains(&x) => {

@@ -19,11 +19,8 @@ fn main() {
 }
 
 fn print_pyramid(height: u8) {
-    // if step > height {
-    //     return;
-    // }
-    // print_pyramid(height, step + 1);
     for step in (0..height).rev() {
+        // First half
         for i in 0..height {
             if i < step {
                 print!("{SPACE}")
@@ -31,9 +28,11 @@ fn print_pyramid(height: u8) {
                 print!("{BLOCK}")
             }
         }
+        // Gap
         for _ in 0..GAP_WIDTH {
             print!("{SPACE}")
         }
+        // Second half
         for _ in 0..height - step {
             print!("{BLOCK}")
         }

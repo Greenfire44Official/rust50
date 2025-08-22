@@ -81,7 +81,7 @@ fn find_card_processor(card_numbers: &Vec<u32>) -> Option<&str> {
             if card_numbers[0] == MASTER_FIRST_DIGIT
                 && MASTER_SECOND_DIGITS.contains(&card_numbers[1]) =>
         {
-            Some("MASTER")
+            Some("MASTERCARD")
         }
         x if VISA_LENGHTS.contains(&x) && card_numbers[0] == VISA_FIRST_DIGIT => Some("VISA"),
         _ => None,

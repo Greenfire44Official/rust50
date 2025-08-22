@@ -4,7 +4,7 @@ members = [
     "c_to_rust/credit", 
     "c_to_rust/guessing_game", 
     "c_to_rust/hello_cargo",
-    "c_to_rust/hello_me",
+    "c_to_rust/hello_me", "c_to_rust/hello_world",
     "c_to_rust/mario_more",
     "c_to_rust/my_library",
     "c_to_rust/scrabble",

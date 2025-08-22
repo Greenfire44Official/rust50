@@ -18,7 +18,7 @@ checksum = "2fd1289c04a9ea8cb22300a459a72a385d7c73d3259e2ed7dcb2af674838cfa9"
 name = "credit"
 version = "0.1.0"
 dependencies = [
- "my_library",
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
 ]
 
 [[package]]
@@ -37,7 +37,7 @@ dependencies = [
 name = "guessing_game"
 version = "0.1.0"
 dependencies = [
- "my_library",
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
  "rand",
 ]
 
@@ -49,8 +49,12 @@ version = "0.1.0"
 name = "hello_me"
 version = "0.1.0"
 dependencies = [
- "my_library",
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
 ]
+
+[[package]]
+name = "hello_world"
+version = "0.1.0"
 
 [[package]]
 name = "libc"
@@ -62,12 +66,17 @@ checksum = "6a82ae493e598baaea5209805c49bbf2ea7de956d50d7da0da1164f9c6d28543"
 name = "mario_more"
 version = "0.1.0"
 dependencies = [
- "my_library",
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
 ]
 
 [[package]]
 name = "my_library"
 version = "0.1.0"
+
+[[package]]
+name = "my_library"
+version = "0.1.0"
+source = "git+https://github.com/Greenfire44Official/my_library.git#fb663404e3abab97a07e39f20a79260160cbad34"
 
 [[package]]
 name = "ppv-lite86"
@@ -135,7 +144,7 @@ dependencies = [
 name = "scrabble"
 version = "0.1.0"
 dependencies = [
- "my_library",
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
 ]
 
 [[package]]

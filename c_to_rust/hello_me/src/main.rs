@@ -1,4 +1,4 @@
 use my_library::get_string;
 fn main() {
-    println!("Hello, {}!", get_string("What's your name?\n"));
+    println!("hello, {}", get_string("What's your name?\n"));
 }

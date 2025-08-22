@@ -7,4 +7,5 @@ members = [
     "c_to_rust/hello_me",
     "c_to_rust/mario_more",
     "c_to_rust/my_library",
+    "c_to_rust/scrabble",
 ]

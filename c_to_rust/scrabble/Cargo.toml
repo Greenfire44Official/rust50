@@ -1,0 +1,7 @@
+[package]
+name = "scrabble"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+my_library = { path = "../my_library" }

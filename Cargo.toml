@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = [
+members = [ "c_to_rust/caesar",
     "c_to_rust/credit",
     "c_to_rust/hello_me",
     "c_to_rust/hello_world",

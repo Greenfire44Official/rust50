@@ -5,6 +5,6 @@ members = [ "c_to_rust/caesar",
     "c_to_rust/hello_me",
     "c_to_rust/hello_world",
     "c_to_rust/mario_more",
-    "c_to_rust/my_library", "c_to_rust/readability",
+    "c_to_rust/my_library", "c_to_rust/plurality", "c_to_rust/readability",
     "c_to_rust/scrabble", "c_to_rust/substitution",
 ]

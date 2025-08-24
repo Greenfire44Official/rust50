@@ -66,6 +66,14 @@ version = "0.1.0"
 source = "git+https://github.com/Greenfire44Official/my_library.git#fb663404e3abab97a07e39f20a79260160cbad34"
 
 [[package]]
+name = "plurality"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
+]
+
+[[package]]
 name = "readability"
 version = "0.1.0"
 dependencies = [

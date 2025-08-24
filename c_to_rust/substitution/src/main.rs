@@ -6,7 +6,6 @@ use my_library::get_string;
 fn main() -> Result<()> {
     let args = args().collect::<Vec<String>>();
     if args.len() != 2 {
-        println!("");
         bail!("Invalid input\n\nUsage: {} key\n", args[0]);
     }
     let key = match parse_key(&args[1]) {

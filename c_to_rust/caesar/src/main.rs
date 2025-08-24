@@ -1,17 +1,17 @@
 use std::env::args;
 
-use anyhow::Result;
+use anyhow::{Result, bail};
 use my_library::get_string;
 
 fn main() -> Result<()> {
     let args = args().collect::<Vec<String>>();
     if args.len() != 2 {
         println!("");
-        anyhow::bail!("Invalid input\n\nUsage: {} key\n", args[0]);
+        bail!("Invalid input\n\nUsage: {} key\n", args[0]);
     }
     let key: u128 = match args[1].parse() {
         Ok(k) => k,
-        Err(_) => anyhow::bail!("Key should be a number"),
+        Err(_) => bail!("Key should be a number"),
     };
     let key: u8 = (key % 26) as u8;
 

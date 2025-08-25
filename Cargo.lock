@@ -26,6 +26,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "cash"
+version = "0.1.0"
+dependencies = [
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
+]
+
+[[package]]
 name = "credit"
 version = "0.1.0"
 dependencies = [
@@ -111,6 +118,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
 
 [[package]]
+name = "runoff"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
+]
+
+[[package]]
 name = "scrabble"
 version = "0.1.0"
 dependencies = [
@@ -119,6 +134,14 @@ dependencies = [
 
 [[package]]
 name = "substitution"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
+]
+
+[[package]]
+name = "tideman"
 version = "0.1.0"
 dependencies = [
  "anyhow",

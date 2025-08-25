@@ -1,0 +1,7 @@
+[package]
+name = "cash"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+my_library = { git = "https://github.com/Greenfire44Official/my_library.git", version = "0.1.0" }

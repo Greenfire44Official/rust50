@@ -13,13 +13,23 @@ struct Candidate {
     eliminated: bool,
 }
 
+impl Candidate {
+    pub fn new(name: String) -> Candidate {
+        Candidate {
+            name: name,
+            votes: 0,
+            eliminated: false,
+        }
+    }
+}
+
 impl fmt::Display for Candidate {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let mut r = write!(f, "{} with {} votes", self.name, self.votes);
+        let mut display = self.name.clone();
         if self.eliminated {
-            r = write!(f, " (eliminated)")
+            display += " (eliminated)";
         }
-        r
+        write!(f, "{}", display)
     }
 }
 
@@ -33,20 +43,17 @@ fn main() -> Result<()> {
     }
     let mut candidates: Vec<Candidate> = Vec::new();
     for candidate in &args[1..args.len()] {
-        candidates.push(Candidate {
-            name: candidate.to_owned(),
-            votes: 0,
-            eliminated: false,
-        });
+        candidates.push(Candidate::new(candidate.to_owned()))
     }
     let votes: usize = loop {
         let input: usize = get_input("Number of voters: ");
         if input <= MAX_VOTERS {
             break input;
         }
+        println!("Too many votes, max: {}", MAX_VOTERS);
     };
 
-    // Usage: voter_preferences[voter][candidate index rank]
+    // Usage: voter_preferences[voter][rank] -> candidate index
     let mut voter_preferences: Vec<Vec<usize>> = vec![vec![0; candidates.len()]; votes];
 
     for voter in 0..votes {
@@ -88,12 +95,33 @@ fn register_ranked_vote(
     Ok(())
 }
 
+fn count_votes(candidates: &mut Vec<Candidate>, voter_preferences: &Vec<Vec<usize>>) {
+    'vote: for voter in voter_preferences {
+        let mut top_choice: usize = 0; // Default value for compiler, but we are skipping the vote if no top choice is found.
+        for (index, candidate_index) in voter.iter().enumerate() {
+            if candidates[*candidate_index].eliminated {
+                if index == voter.len() - 1 {
+                    /*
+                    This should be impossible since we force voters to rank ALL candidates.
+                    However, in a real runoff election voters could vote for as many candidates as they wish.
+                    */
+                    continue 'vote;
+                }
+                continue;
+            }
+            top_choice = *candidate_index;
+            break;
+        }
+        candidates[top_choice].votes += 1;
+    }
+}
+
 fn determine_winners(
     candidates: &mut Vec<Candidate>,
     voter_preferences: &Vec<Vec<usize>>,
 ) -> Vec<Candidate> {
     for _ in 0..=(candidates.len() * 2) {
-        register_votes(candidates, voter_preferences);
+        count_votes(candidates, voter_preferences);
 
         let mut winners: Vec<Candidate> = Vec::new();
         for candidate in candidates.iter() {
@@ -118,27 +146,6 @@ fn determine_winners(
         return winners;
     }
     vec![]
-}
-
-fn register_votes(candidates: &mut Vec<Candidate>, voter_preferences: &Vec<Vec<usize>>) {
-    'vote: for voter in voter_preferences {
-        let mut top_choice: usize = 0; // Default value for compiler, but we are skipping the vote if no top choice is found.
-        for (index, candidate_index) in voter.iter().enumerate() {
-            if candidates[*candidate_index].eliminated {
-                if index == voter.len() - 1 {
-                    /*
-                    This should be impossible since we force voters to rank ALL candidates.
-                    However, in a real runoff election voters could vote for as many candidates as they wish.
-                    */
-                    continue 'vote;
-                }
-                continue;
-            }
-            top_choice = *candidate_index;
-            break;
-        }
-        candidates[top_choice].votes += 1;
-    }
 }
 
 fn check_tie(candidates: &mut Vec<Candidate>) -> Option<Vec<Candidate>> {

@@ -12,11 +12,18 @@ struct Candidate {
     votes: u64,
 }
 
+impl Candidate {
+    pub fn new(name: String) -> Candidate {
+        Candidate {
+            name: name,
+            votes: 0,
+        }
+    }
+}
+
 impl fmt::Display for Candidate {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Use the write! macro to write the desired output to the formatter 'f'.
-        // This macro works similarly to println!, but writes to the provided buffer.
-        write!(f, "{} with {} votes", self.name, self.votes)
+        write!(f, "{}", self.name)
     }
 }
 
@@ -30,16 +37,14 @@ fn main() -> Result<()> {
     }
     let mut candidates: Vec<Candidate> = Vec::new();
     for candidate in &args[1..args.len()] {
-        candidates.push(Candidate {
-            name: candidate.to_owned(),
-            votes: 0,
-        });
+        candidates.push(Candidate::new(candidate.to_owned()))
     }
     let votes: usize = loop {
         let input: usize = get_input("Number of voters: ");
         if input <= MAX_VOTERS {
             break input;
         }
+        println!("Too many votes, max: {}", MAX_VOTERS);
     };
 
     for voter in 0..votes {

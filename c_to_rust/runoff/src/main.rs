@@ -34,12 +34,21 @@ impl fmt::Display for Candidate {
 }
 
 fn main() -> Result<()> {
+    // Parse and validate arguments
     let args = args().collect::<Vec<String>>();
     if args.len() < 2 {
-        bail!("Invalid input\n\nUsage: {} [canididate ...]\n", args[0]);
+        bail!("Invalid input\n\nUsage: {} [candidate ...]\n", args[0]);
     }
     if args.len() > MAX + 1 {
-        bail!("Too many candidates! Maximum number of cadidates: {MAX}\n");
+        bail!("Too many candidates! Maximum number of candidates: {MAX}\n");
+    }
+
+    // Check for duplicate candidate names
+    let mut seen = std::collections::HashSet::new();
+    for candidate in &args[1..] {
+        if !seen.insert(candidate) {
+            bail!("Duplicate candidate detected: {}", candidate);
+        }
     }
     let mut candidates: Vec<Candidate> = Vec::new();
     for candidate in &args[1..args.len()] {
@@ -77,12 +86,16 @@ fn register_ranked_vote(
     candidates: &mut Vec<Candidate>,
     voter_preferences: &mut Vec<Vec<usize>>,
 ) -> Result<(), Error> {
+    let mut seen = std::collections::HashSet::new();
     for rank in 0..candidates.len() {
         let index = loop {
             print!("Rank {}: ", rank + 1);
             let vote = get_string(&(""));
             match candidates.iter().position(|c| c.name == vote) {
                 Some(i) => {
+                    if !seen.insert(i) {
+                        bail!("Duplicate vote detected for candidate: {}", vote);
+                    }
                     break i;
                 }
                 None => {

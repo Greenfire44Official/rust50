@@ -28,12 +28,21 @@ impl fmt::Display for Candidate {
 }
 
 fn main() -> Result<()> {
+    // Parse and validate arguments
     let args = args().collect::<Vec<String>>();
     if args.len() < 2 {
-        bail!("Invalid input\n\nUsage: {} [canididates]\n", args[0]);
+        bail!("Invalid input\n\nUsage: {} [candidate ...]\n", args[0]);
     }
     if args.len() > MAX + 1 {
-        bail!("Too many candidates! Maximum number of cadidates: {MAX}\n");
+        bail!("Too many candidates! Maximum number of candidates: {MAX}\n");
+    }
+
+    // Check for duplicate candidate names
+    let mut seen = std::collections::HashSet::new();
+    for candidate in &args[1..] {
+        if !seen.insert(candidate) {
+            bail!("Duplicate candidate detected: {}", candidate);
+        }
     }
     let mut candidates: Vec<Candidate> = Vec::new();
     for candidate in &args[1..args.len()] {

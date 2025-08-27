@@ -76,7 +76,8 @@ fn vote(candidates: &mut Vec<Candidate>) {
                 break i;
             }
             None => {
-                println!("Invalid vote.")
+                println!("Invalid vote.");
+                return;
             }
         }
     };

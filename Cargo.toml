@@ -1,10 +1,21 @@
 [workspace]
 resolver = "3"
-members = [ "c_to_rust/caesar", "c_to_rust/cash",
-    "c_to_rust/credit",
-    "c_to_rust/hello_me",
-    "c_to_rust/hello_world",
-    "c_to_rust/mario_more",
-    "c_to_rust/my_library", "c_to_rust/plurality", "c_to_rust/readability", "c_to_rust/runoff",
-    "c_to_rust/scrabble", "c_to_rust/substitution", "c_to_rust/tideman",
+members = [
+    "my_library",
+    "c_to_rust/pset1/hello_me",
+    "c_to_rust/pset1/hello_world",
+    "c_to_rust/pset1/mario_more",
+    "c_to_rust/pset1/cash",
+    "c_to_rust/pset1/credit",
+    "c_to_rust/pset2/scrabble",
+    "c_to_rust/pset2/readability",
+    "c_to_rust/pset2/caesar",
+    "c_to_rust/pset2/substitution",
+    "c_to_rust/pset3/plurality",
+    "c_to_rust/pset3/runoff",
+    "c_to_rust/pset3/tideman",
+    "c_to_rust/pset4/volume",
+    "c_to_rust/pset4/filter/filter-less",
+    "c_to_rust/pset4/filter/filter-more",
+    "c_to_rust/pset4/recover",
 ]

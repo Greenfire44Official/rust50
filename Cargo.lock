@@ -40,6 +40,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "filter-less"
+version = "0.1.0"
+
+[[package]]
+name = "filter-more"
+version = "0.1.0"
+
+[[package]]
 name = "hello_me"
 version = "0.1.0"
 dependencies = [
@@ -86,6 +94,14 @@ version = "0.1.0"
 dependencies = [
  "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
  "regex",
+]
+
+[[package]]
+name = "recover"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
 ]
 
 [[package]]
@@ -142,6 +158,14 @@ dependencies = [
 
 [[package]]
 name = "tideman"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "my_library 0.1.0 (git+https://github.com/Greenfire44Official/my_library.git)",
+]
+
+[[package]]
+name = "volume"
 version = "0.1.0"
 dependencies = [
  "anyhow",

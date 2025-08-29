@@ -1,4 +1,4 @@
-use my_library::get_input;
+use rust50::get_input;
 
 const COIN_VALUES: [f64; 4] = [25.0, 10.0, 5.0, 1.0];
 

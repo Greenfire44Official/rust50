@@ -1,4 +1,4 @@
-use my_library::get_input;
+use rust50::get_input;
 
 const MAX_DIGITS: usize = 16;
 const MIN_DIGITS: usize = 13;

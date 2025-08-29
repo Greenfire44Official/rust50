@@ -10,7 +10,7 @@ This repository (will) contain solutions to all CS50x C problems in Rust. Additi
 - `rust50` library for easy integration of CS50x-like functionality
 
 ## Use rust50 library crate:
-Everyone is free to use rust50 in their projects. Just go to your project (package) root folder, where Cargo.toml is, and run:
+Everyone is free to use rust50 in their projects. Just go to your project (package) root folder, where Cargo.toml is, and run:\
 ```cargo add rust50 --git https://github.com/Greenfire44Official/rust50```
 
 ## Progress

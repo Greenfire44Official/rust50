@@ -3,7 +3,7 @@
     And it also gets some texts wrong, haven't figured out why.
     I could spend time fixing it, but why do so when the simple check every char individually works.
 */
-use my_library::get_string;
+use rust50::get_string;
 use regex::Regex;
 
 fn main() {

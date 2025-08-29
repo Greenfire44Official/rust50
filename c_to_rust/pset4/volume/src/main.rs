@@ -1,7 +1,7 @@
 use std::io::{BufReader, BufWriter, ErrorKind, Read, Write};
 use std::path::Path;
 
-use my_library::get_string;
+use rust50::get_string;
 
 use anyhow::{Result as AnyhowResult, bail};
 

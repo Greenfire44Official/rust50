@@ -1,4 +1,4 @@
-use my_library::get_input;
+use rust50::get_input;
 const BLOCK: char = '#';
 const SPACE: char = ' ';
 const GAP_WIDTH: u8 = 2;

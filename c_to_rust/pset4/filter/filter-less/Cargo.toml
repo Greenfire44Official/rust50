@@ -6,4 +6,4 @@ edition = "2024"
 [dependencies]
 anyhow = "1.0.99"
 image = "0.25.6"
-my_library = { git = "https://github.com/Greenfire44Official/my_library.git", version = "0.1.0" }
+rust50 = { git = "https://github.com/Greenfire44Official/rust50", version = "0.1.1" }

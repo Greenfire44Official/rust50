@@ -1,4 +1,4 @@
-use my_library::get_string;
+use rust50::get_string;
 
 const SENTENCE_ENDERS: [char; 3] = ['.', '!', '?'];
 

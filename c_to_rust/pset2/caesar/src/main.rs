@@ -1,7 +1,7 @@
 use std::env::args;
 
 use anyhow::{Result, bail};
-use my_library::get_string;
+use rust50::get_string;
 
 fn main() -> Result<()> {
     let args = args().collect::<Vec<String>>();

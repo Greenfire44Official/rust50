@@ -1,7 +1,7 @@
 use std::{env::args, fmt};
 
 use anyhow::{Result, bail};
-use my_library::{get_input, get_string};
+use rust50::{get_input, get_string};
 
 const MAX: usize = 9;
 const MAX_VOTERS: usize = 100;

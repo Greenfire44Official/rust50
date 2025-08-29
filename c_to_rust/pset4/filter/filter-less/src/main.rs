@@ -2,7 +2,7 @@ use std::fs;
 
 use anyhow::{Result as AnyhowResult, bail};
 use image::{DynamicImage, GenericImage, GenericImageView, ImageReader, Rgba};
-use my_library::get_string;
+use rust50::get_string;
 
 const BLUR_RADIUS: u32 = 1;
 

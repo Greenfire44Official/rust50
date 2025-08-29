@@ -9,7 +9,7 @@ const HEADER_SIZE: usize = 44;
 fn main() -> AnyhowResult<()> {
     let args: Vec<String> = std::env::args().collect();
     if args.len() < 4 {
-        bail!("Invalid input\n\nUsage: volume input.mp3 output.mp3 multiplier\n");
+        bail!("Invalid input\n\nUsage: volume input.wav output.wav multiplier\n");
     }
     let src_path = Path::new(&args[1]);
     let out_path = &args[2];
@@ -26,7 +26,7 @@ fn main() -> AnyhowResult<()> {
         Err(e) if e.kind() == ErrorKind::AlreadyExists => {
             println!(
                 "File {} already exists. Do you want to overwrite? [y/N]",
-                args[2]
+                &args[2]
             );
             if !["y", "yes"].contains(&get_string("").to_lowercase().as_str()) {
                 println!("Canceled");

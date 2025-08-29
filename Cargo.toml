@@ -1,7 +1,7 @@
 [workspace]
 resolver = "3"
 members = [
-    "my_library",
+    "rust50",
     "c_to_rust/pset1/hello_me",
     "c_to_rust/pset1/hello_world",
     "c_to_rust/pset1/mario_more",

@@ -7,3 +7,4 @@ c_to_rust\hello_cargo\target
 c_to_rust\mario_more\target
 c_to_rust\my_library\target
 .vscode
+*images

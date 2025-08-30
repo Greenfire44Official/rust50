@@ -51,5 +51,5 @@ check50-rust-checks
 │   ├── inheritance ❌
 │   └── speller ❌
 └── pset6 ❌
-    └── dna
+    └── dna ❌
 ```

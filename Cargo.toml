@@ -15,7 +15,6 @@ members = [
     "c_to_rust/pset3/runoff",
     "c_to_rust/pset3/tideman",
     "c_to_rust/pset4/volume",
-    "c_to_rust/pset4/filter/filter-less",
-    "c_to_rust/pset4/filter/filter-more",
+    "c_to_rust/pset4/filter",
     "c_to_rust/pset4/recover",
 ]

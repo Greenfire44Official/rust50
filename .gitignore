@@ -2,3 +2,4 @@ automation.sh
 target
 .vscode
 *images
+tests

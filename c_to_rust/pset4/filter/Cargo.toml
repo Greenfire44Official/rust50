@@ -1,5 +1,5 @@
 [package]
-name = "filter-less"
+name = "filter"
 version = "0.1.0"
 edition = "2024"
 
@@ -7,3 +7,4 @@ edition = "2024"
 anyhow = "1.0.99"
 image = "0.25.6"
 rust50 = { git = "https://github.com/Greenfire44Official/rust50", version = "0.1.1" }
+

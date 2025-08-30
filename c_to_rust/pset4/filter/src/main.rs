@@ -8,24 +8,55 @@ const BOX_BLUR_RADIUS: i32 = 1;
 
 fn main() -> AnyhowResult<()> {
     let args: Vec<String> = std::env::args().collect();
+
     if args.len() < 4 {
-        bail!("Invalid input\n\nUsage: filter [filter flag (b, g, r, s)] input.bmp output.bmp\n");
-    }
-    let filter: Vec<char> = args[1].to_lowercase().chars().collect();
-    if filter.len() != 1 {
-        bail!("Only one filter allowed.")
-    }
-    if !['b', 'g', 'r', 's', 'e'].contains(&filter[0]) {
-        bail!("Invalid filter.")
+        bail!("Invalid input\n\nUsage: filter -[filter flag (b, g, r, s)] input.bmp output.bmp\n");
     }
 
-    let src = ImageReader::open(&args[2])?.decode()?;
+    let flags: Vec<String> = args
+        .iter()
+        .filter_map(|arg| match arg.chars().next().unwrap() == '-' {
+            true => Some(arg[1..].to_string()),
+            false => None,
+        })
+        .collect();
 
-    match fs::exists(&args[3]) {
+    let files: Vec<String> = args[1..]
+        .iter()
+        .filter_map(|arg| match arg.chars().next().unwrap() != '-' {
+            true => Some(arg.clone()),
+            false => None,
+        })
+        .collect();
+
+    let filter: char;
+
+    match flags {
+        _ if flags.len() == 0 => bail!(
+            "No filter flag provided.\n\nUsage: filter -[filter flag (b, g, r, s)] input.bmp output.bmp\n"
+        ),
+        _ if flags.len() > 1 => bail!("Too many flags"),
+        _ if flags[0].to_lowercase().chars().collect::<Vec<char>>().len() != 1 => {
+            bail!("Only one filter allowed.")
+        }
+        _ => {
+            filter = flags[0].to_lowercase().chars().collect::<Vec<char>>()[0];
+            if !['b', 'g', 'r', 's', 'e'].contains(&filter) {
+                bail!("Invalid filter.")
+            }
+        }
+    }
+
+    println!("{:?}", flags);
+    println!("{:?}", files);
+
+    let src = ImageReader::open(&files[0])?.decode()?;
+
+    match fs::exists(&files[1]) {
         Ok(true) => {
             println!(
                 "File {} already exists. Do you want to overwrite? [y/N]",
-                &args[3]
+                &files[1]
             );
             if !["y", "yes"].contains(&get_string("").to_lowercase().as_str()) {
                 println!("Canceled");
@@ -38,7 +69,7 @@ fn main() -> AnyhowResult<()> {
 
     println!("\nProcessing...");
 
-    let out = match filter[0] {
+    let out = match filter {
         'b' => blur(src),
         'g' => grayscale(src),
         'r' => reflect(src),
@@ -48,7 +79,7 @@ fn main() -> AnyhowResult<()> {
     };
 
     println!("\nSaving...");
-    out.save(&args[3])?;
+    out.save(&files[1])?;
 
     println!("Done!");
     Ok(())

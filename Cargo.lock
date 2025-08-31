@@ -131,14 +131,14 @@ name = "caesar"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
 name = "cash"
 version = "0.1.0"
 dependencies = [
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -187,7 +187,7 @@ dependencies = [
 name = "credit"
 version = "0.1.0"
 dependencies = [
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -283,7 +283,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "image",
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -355,7 +355,7 @@ checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
 name = "hello_me"
 version = "0.1.0"
 dependencies = [
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -488,7 +488,7 @@ dependencies = [
 name = "mario_more"
 version = "0.1.0"
 dependencies = [
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -618,7 +618,7 @@ name = "plurality"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -806,7 +806,7 @@ name = "readability"
 version = "0.1.0"
 dependencies = [
  "regex",
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -814,7 +814,7 @@ name = "recover"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -857,7 +857,7 @@ name = "runoff"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -867,7 +867,7 @@ version = "0.1.1"
 [[package]]
 name = "rust50"
 version = "0.1.1"
-source = "git+https://github.com/Greenfire44Official/rust50#6756d977a5168e0fb0615db7b05cf91da14cf168"
+source = "git+https://github.com/Greenfire44Official/rust50.git#6756d977a5168e0fb0615db7b05cf91da14cf168"
 
 [[package]]
 name = "rustversion"
@@ -879,7 +879,7 @@ checksum = "b39cdef0fa800fc44525c84ccb54a029961a8215f9619753635a9c0d2538d46d"
 name = "scrabble"
 version = "0.1.0"
 dependencies = [
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -943,7 +943,7 @@ name = "substitution"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -1001,7 +1001,7 @@ name = "tideman"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]
@@ -1077,7 +1077,7 @@ name = "volume"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50)",
+ "rust50 0.1.1 (git+https://github.com/Greenfire44Official/rust50.git)",
 ]
 
 [[package]]

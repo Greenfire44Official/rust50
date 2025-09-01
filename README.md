@@ -47,8 +47,8 @@ check50-rust-checks
 │   │   └── more ✅
 │   ├── recover ✅
 │   └── volume ✅
-├── pset5 ❌
-│   ├── inheritance ❌
+├── pset5 ⛔️
+│   ├── inheritance ✅
 │   └── speller ❌
 └── pset6 ❌
     └── dna ❌

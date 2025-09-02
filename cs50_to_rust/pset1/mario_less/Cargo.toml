@@ -1,0 +1,11 @@
+[package]
+name = "mario_less"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rust50 = { git = "https://github.com/Greenfire44Official/rust50.git" }
+
+[[bin]]
+name = "mario"
+path = "src/main.rs"

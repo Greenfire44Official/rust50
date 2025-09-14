@@ -161,7 +161,7 @@ fn get_box(
     x: u32,
     y: u32,
     dist_from_center: i32,
-    include_outside: bool, // Includes pixels outside the image as black, transparent pixels.
+    include_outside: bool, // Includes pixels outside the image as black pixels.
 ) -> Vec<Rgba<u8>> {
     let mut pixel_box: Vec<Rgba<u8>> = Vec::new();
 
@@ -169,7 +169,7 @@ fn get_box(
         for x in (x as i32 - dist_from_center)..=(x as i32 + dist_from_center) {
             if !(0..src.width()).contains(&(x as u32)) || !(0..src.height()).contains(&(y as u32)) {
                 if include_outside {
-                    pixel_box.push(Rgba([0; 4]));
+                    pixel_box.push(Rgba([0, 0, 0, 255]));
                 }
                 continue;
             }
@@ -180,17 +180,14 @@ fn get_box(
     pixel_box
 }
 
-// const GX: [i32; 9] = [1,1,1,0,0,0,1,1,1];
 const GX: [i32; 9] = [-1, 0, 1, -2, 0, 2, -1, 0, 1];
 
-// const GY: [i32; 9] = [1,1,1,0,0,0,1,1,1];
 const GY: [i32; 9] = [-1, -2, -1, 0, 0, 0, 1, 2, 1];
 
 fn edge(src: DynamicImage) -> DynamicImage {
     let mut out = src.clone();
 
     for (x, y, _) in src.pixels() {
-        // TODO: include pixels outside the image as black pixels.
         let pixel_box = get_box(&src, x, y, 1, true);
 
         let sobel_pixel = get_sobel_pixel(

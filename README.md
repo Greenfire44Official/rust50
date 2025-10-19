@@ -36,7 +36,7 @@ Also checkout my check50 rust projects:
 | ❌     | No progress |
 
 ```
-check50-rust-checks
+rust50
 ├── pset1 ✅
 │   ├── cash ✅
 │   ├── credit ✅
